@@ -1,0 +1,12 @@
+boolean isIPv4Address(String inputString) {
+    String bit8 = "25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d";
+    // Pattern ipv4 = Pattern.compile(bit8+"\\."+bit8+"\\."+bit8+"\\."+bit8);
+    // Matcher match = ipv4.matcher(inputString);
+    String[] dirs = inputString.split("\\.");
+    if(dirs.length != 4) return false;
+    for(String s : dirs){
+        if(!s.matches(bit8)) return false;
+    }
+    return true;
+    
+}
