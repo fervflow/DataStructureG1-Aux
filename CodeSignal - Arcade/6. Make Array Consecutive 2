@@ -1,0 +1,9 @@
+int makeArrayConsecutive2(int[] statues) {
+    int max = statues[0], min = statues[0];
+    if(statues.length == 1) return 0;
+    for (int i=1;i<statues.length;i++){
+        if(statues[i] > max) max = statues[i];
+        if(statues[i] < min) min = statues[i];
+    }
+    return max-min-1-(statues.length-2);
+}
