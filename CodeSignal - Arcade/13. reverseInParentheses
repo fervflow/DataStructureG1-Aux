@@ -1,0 +1,22 @@
+String reverseInParentheses(String inputString) {
+    int izq = inputString.lastIndexOf("(");
+    int der = inputString.indexOf(")", izq);
+    while (izq != -1){
+        String invertida = reverse(inputString.substring(izq+1, der));
+        String p1 = inputString.substring(0, izq);
+        String p2 = inputString.substring(der+1);
+        inputString = p1 + invertida + p2;
+        izq = inputString.lastIndexOf("(");
+        der = inputString.indexOf(")", izq);
+    }
+    return inputString;
+}
+
+private String reverse(String s){
+    String ns = new String();
+    ns = "";
+    for(int i = s.length()-1; i >= 0; i--){
+        ns += s.charAt(i);
+    }
+    return ns;
+}
