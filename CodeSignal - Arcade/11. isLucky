@@ -1,0 +1,14 @@
+boolean isLucky(int n) {
+    int limit = ((int)Math.log10(n)+1)/2;
+    int izq = 0, der = 0;
+    while(limit > 0){
+        der += n%10;
+        n /= 10; limit--;
+    }
+    while(n/10 > 0){
+        izq += n%10;
+        n /= 10;
+    }
+    izq += n;
+    return (izq == der);
+}
