@@ -1,0 +1,8 @@
+int arrayMaximalAdjacentDifference(int[] inputArray) {
+    int maxDif = 0;
+    for (int i = 1; i < inputArray.length; i++){
+        if(Math.abs(inputArray[i-1] - inputArray[i]) > maxDif)
+            maxDif = Math.abs(inputArray[i-1] - inputArray[i]);
+    }
+    return maxDif;
+}
