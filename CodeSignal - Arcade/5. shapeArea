@@ -1,0 +1,7 @@
+int shapeArea(int n) {
+    int res = 1;
+    for(int i=1; i<n ; i++){
+        res += 4*i;
+    }
+    return res;
+}
