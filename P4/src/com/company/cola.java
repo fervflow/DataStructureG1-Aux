@@ -32,9 +32,9 @@ public class cola {
         return temp;
     }
 
-//    public int primero (){
-//
-//    }
+    public int primero (){
+        return p1.peek();
+    }
 
 }
 
