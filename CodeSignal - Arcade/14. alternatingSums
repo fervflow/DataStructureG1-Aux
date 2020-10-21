@@ -1,0 +1,10 @@
+int[] alternatingSums(int[] a) {
+    int[] sumas = new int[2];
+    for(int i=0; i < a.length; i++){
+        if( i%2 == 0 ){
+            sumas[0] += a[i];
+        }
+        else sumas[1] += a[i];
+    }
+    return sumas;
+}
