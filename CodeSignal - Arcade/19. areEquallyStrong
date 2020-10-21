@@ -1,0 +1,5 @@
+boolean areEquallyStrong(int yourLeft, int yourRight, int friendsLeft, int friendsRight) {
+    int strongArm = (yourRight > yourLeft ? yourRight : yourLeft);
+    return (strongArm == friendsRight || strongArm == friendsLeft) &&
+    (yourLeft + yourRight == friendsLeft + friendsRight);
+}
