@@ -1,0 +1,26 @@
+boolean almostIncreasingSequence(int[] sequence) {
+    boolean f = true, g = true;
+    for(int i=1; i<sequence.length; i++){
+        if(sequence[i]<=sequence[i-1])
+            if (f){
+                if(i-2>=0){
+                    g = false;
+                    if(sequence[i-2] < sequence[i]){
+                        f = false;
+                        //sequence[i] = sequence[i-2];
+                    }
+                    else if ( i+1 < sequence.length && sequence[i]<sequence[i+1]){
+                        f = false;
+                        sequence[i] = sequence [i-1];
+                    }
+                }
+                if ( i+1 < sequence.length && sequence[i]<sequence[i+1] && g){
+                        f = false;
+                        sequence[i] = sequence [i-1];
+                    }
+                // f = false;
+            }
+            else return f;
+    }
+    return true;
+}
