@@ -1,0 +1,23 @@
+int[] sortByHeight(int[] a) {
+    if (a.length == 1) return a;
+    int izq = 0, der = a.length - 1;
+    while (izq <= der){
+        if(a[izq] == -1) izq++;
+        else if(a[der] == -1) der--;
+        else{
+            order(a, izq, der);
+            izq++;
+        }
+    }
+    return a;    
+}
+private void order(int[] a, int izq, int der){
+    int aux;
+    for(int i = der; i >= izq; i--){
+        if(a[i] != -1 && a[i] < a[izq]){
+            aux = a[i];
+            a[i] = a[izq];
+            a[izq] = aux;
+        }
+    }
+}
