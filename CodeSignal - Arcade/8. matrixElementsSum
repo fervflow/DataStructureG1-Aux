@@ -1,0 +1,16 @@
+int matrixElementsSum(int[][] matrix) {
+    
+    boolean[] fantasma = new boolean[matrix[0].length];
+    for (int i=0;i<fantasma.length; i++) fantasma[i]=true;
+    int sum = 0;
+    for (int i=0;i<matrix.length;i++){
+        for(int j=0;j<matrix[i].length;j++){
+            if(matrix[i][j] == 0){
+                fantasma[j] = false;
+            }
+            else if(fantasma[j])
+                sum += matrix[i][j];
+        } 
+    }
+    return sum;
+}
