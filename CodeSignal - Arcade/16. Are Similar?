@@ -1,0 +1,22 @@
+boolean areSimilar(int[] a, int[] b) {
+    if(a.length != b.length){
+            return false;
+    }
+    List<Integer> mismatchIndex = new ArrayList<>();
+    for(int i=0; i<a.length; i++){
+        if(a[i] != b[i]){
+            mismatchIndex.add(i);
+        }
+    }
+    // for(Integer i=0; i<a.length; i++){
+        System.out.println(mismatchIndex);
+    // }
+    if(mismatchIndex.size() == 0){
+        return true;
+    } else if (mismatchIndex.size() == 2){
+        return  a[mismatchIndex.get(0)] == b[mismatchIndex.get(1)] &&
+                b[mismatchIndex.get(0)] == a[mismatchIndex.get(1)];
+    } else {
+        return false;
+    }
+}
