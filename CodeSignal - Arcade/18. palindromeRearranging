@@ -1,0 +1,16 @@
+boolean palindromeRearranging(String inputString) {
+    Map<Character, Integer> cont = new HashMap<>();
+    for(char c : inputString.toCharArray()){
+        if(cont.containsKey(c))
+            cont.put(c, cont.get(c)+1);
+        else cont.put(c, 1);
+    }
+    int imp = 0;
+    for(Character c : cont.keySet()){
+        if(cont.get(c) % 2 == 1){
+            imp++;
+            if(imp == 2) return false;
+        }
+    }
+    return true;
+}
